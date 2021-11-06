@@ -29,7 +29,7 @@ public class OrderService {
 	public List<OrderDTO> findAll(){
 		List<Order> list = repository.findOrderWithProducts();
 				
-		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
+		return list.stream().map(order -> new OrderDTO(order)).collect(Collectors.toList());
 	}
 	
 	@Transactional
